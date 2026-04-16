@@ -7,64 +7,115 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.png">
 </head>
-
 <body>
 
 <header>
     <nav class="navbar">
         <h1 class="logo">Hotel Buddha</h1>
         <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rooms.html" class="active">Rooms</a></li>
             <li><a href="restaurant.html">Restaurant</a></li>
             <li><a href="services.html">Services</a></li>
         </ul>
+        <div class="auth-buttons">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="signup-btn">Sign Up</a>
+        </div>
     </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h2>Our Rooms</h2>
-        <p>Explore comfort and luxury in every stay</p>
-        <a href="index.html#booking" class="btn">Book Now</a>
+<section class="page-hero">
+    <div class="page-hero-content">
+        <h2>Rooms from Affordable Luxury</h2>
+        <p>Discover elegant spaces designed for comfort, peace, and memorable stays.</p>
+        <a href="index.html#booking" class="primary-btn">Book Your Stay</a>
     </div>
 </section>
 
-<section class="about">
-    <h2>Available Rooms</h2>
-    <p>Choose the perfect room based on your needs.</p>
-
-    <div class="room-card">
-        <h3>Single Room</h3>
-        <p>Perfect for solo travellers.</p>
-        <p><strong>1 Guest</strong></p>
-    </div>
-
-    <div class="room-card">
-        <h3>Double Room</h3>
-        <p>Comfortable stay for two people.</p>
-        <p><strong>2 Guests</strong></p>
-    </div>
-
-    <div class="room-card">
-        <h3>King Room</h3>
-        <p>Spacious room with king-size bed.</p>
-        <p><strong>2–3 Guests</strong></p>
-    </div>
-
-    <div class="room-card">
-        <h3>Family Room</h3>
-        <p>Ideal for families or group stays.</p>
-        <p><strong>4+ Guests</strong></p>
-    </div>
-
+<section class="section-title">
+    <h2>Explore Our Rooms</h2>
+    <p>Choose the room that best suits your travel style and comfort needs.</p>
 </section>
 
-<footer>
-    <p>© 2026 Hotel Buddha | All Rights Reserved</p>
+<section class="rooms-grid">
+    <div class="room-card">
+        <img src="images/single-room.jpg" alt="Single room">
+        <div class="room-content">
+            <span class="room-tag">1 Guest</span>
+            <h3>Deluxe Room</h3>
+            <p>A comfortable and peaceful room designed for a relaxing stay. 
+               It features modern furnishings, a cosy atmosphere, and essential amenities 
+               to ensure a pleasant and stress-free experience</p>
+            <div class="room-bottom">
+                <strong>£79 / night</strong>
+                <a href="#" class="secondary-btn">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <img src="images/double-room.jpg" alt="Double room">
+        <div class="room-content">
+            <span class="room-tag">2 Guests</span>
+            <h3>Super Room</h3>
+            <p>A premium room offering a luxury experience with stylish modern design. 
+               It provides extra space, elegant décor, and upgraded facilities, 
+               making it ideal for guests seeking comfort and sophistication.</p>
+            <div class="room-bottom">
+                <strong>£109 / night</strong>
+                <a href="#" class="secondary-btn">View Details</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="room-card">
+        <img src="images/family-room.jpg" alt="Family room">
+        <div class="room-content">
+            <span class="room-tag">4+ Guests</span>
+            <h3>Family Room</h3>
+            <p>Designed for families or groups, this room provides ample space and comfort for multiple guests. 
+               It includes modern facilities and a welcoming atmosphere, ensuring a convenient and enjoyable 
+               stay for everyone.</p>
+            <div class="room-bottom">
+                <strong>£189 / night</strong>
+                <a href="#" class="secondary-btn">View Details</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="highlight-banner">
+    <div>
+        <h2>Comfort Meets Luxury</h2>
+        <p>Each room is thoughtfully designed with modern facilities and a calm atmosphere.</p>
+    </div>
+    <a href="index.html#booking" class="primary-btn">Reserve Now</a>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Hotel Buddha</h3>
+            <p>Find peace and luxury in every stay.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <a href="rooms.html">Rooms</a>
+            <a href="restaurant.html">Restaurant</a>
+            <a href="services.html">Services</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Email: info@hotelbuddha.com</p>
+            <p>Phone: +44 123 456 789</p>
+        </div>
+    </div>
+    <p class="copyright">© 2026 Hotel Buddha</p>
 </footer>
-
-<script src="js/main.js"></script>
 
 </body>
 </html>
