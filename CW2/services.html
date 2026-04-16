@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Hotel Buddha</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/service.css">
     <link rel="icon" href="images/favicon.png">
 </head>
 <body>
@@ -35,6 +35,7 @@
 </section>
 
 <section class="services-intro">
+    <img src="images/service.jpg" alt="Hotel Services" class="services-image">
     <h2>What We Offer</h2>
     <p>
         At Hotel Buddha, we provide a range of essential and luxury services to improve your overall experience.
@@ -43,8 +44,9 @@
 </section>
 
 <section class="services-grid">
+
     <div class="service-card">
-        <div class="service-icon">📶</div>
+        <img src="images/free-wifi.jpg" alt="Free WiFi">
         <h3>Free WiFi</h3>
         <p>
             Stay connected throughout your visit with our fast and reliable free WiFi service.
@@ -53,7 +55,7 @@
     </div>
 
     <div class="service-card">
-        <div class="service-icon">🕒</div>
+        <img src="images/support.jpg" alt="24/7 Support">
         <h3>24/7 Support</h3>
         <p>
             Our support team is available at all times to assist with your needs and ensure a smooth stay.
@@ -62,7 +64,7 @@
     </div>
 
     <div class="service-card">
-        <div class="service-icon">💆</div>
+        <img src="images/spa.jpg" alt="Spa and Wellness">
         <h3>Spa & Wellness</h3>
         <p>
             Relax your body and mind with our peaceful spa and wellness services.
@@ -71,13 +73,14 @@
     </div>
 
     <div class="service-card">
-        <div class="service-icon">🛎️</div>
+        <img src="images/room-service.jpg" alt="Room Service">
         <h3>Room Service</h3>
         <p>
             Enjoy food and essential services delivered directly to your room with ease.
             Our room service is designed to provide comfort and convenience whenever you need it.
         </p>
     </div>
+
 </section>
 
 <section class="service-highlight">
@@ -114,6 +117,18 @@
     </div>
     <p class="copyright">© 2026 Hotel Buddha</p>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".service-card").forEach(el => observer.observe(el));
+});
+</script>
 
 </body>
 </html>
