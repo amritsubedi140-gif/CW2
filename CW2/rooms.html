@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms - Hotel Buddha</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Rooms – Hotel Buddha</title>
+
     <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/rooms.css">
 </head>
+
 <body>
 
-<header>
+<header class="header">
     <nav class="navbar">
-        <h1 class="logo">Hotel Buddha</h1>
+        <div class="logo">Hotel Buddha</div>
+
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="rooms.html" class="active">Rooms</a></li>
             <li><a href="restaurant.html">Restaurant</a></li>
             <li><a href="services.html">Services</a></li>
         </ul>
+
         <div class="auth-buttons">
-            <a href="#" class="login-btn">Login</a>
-            <a href="#" class="signup-btn">Sign Up</a>
+            <a href="#" class="btn-outline">Login</a>
+            <a href="#" class="btn-filled">Sign Up</a>
         </div>
     </nav>
 </header>
@@ -28,73 +32,83 @@
 <section class="page-hero">
     <div class="page-hero-content">
         <h2>Rooms from Affordable Luxury</h2>
-        <p>Discover elegant spaces designed for comfort, peace, and memorable stays.</p>
-        <a href="index.html#booking" class="primary-btn">Book Your Stay</a>
+        <p>Experience peace and comfort at Hotel Buddha.</p>
+        <a href="index.html#booking" class="btn-filled">Book Now</a>
     </div>
 </section>
 
 <section class="section-title">
     <h2>Explore Our Rooms</h2>
-    <p>Choose the room that best suits your travel style and comfort needs.</p>
+    <p>Choose the perfect room for a comfortable and relaxing stay.</p>
 </section>
 
 <section class="rooms-grid">
+
+    <!-- Deluxe Room -->
     <div class="room-card">
-        <img src="images/single-room.jpg" alt="Single room">
+        <img src="images/deluxe-room.jpg" alt="Deluxe Room">
         <div class="room-content">
-            <span class="room-tag">1 Guest</span>
             <h3>Deluxe Room</h3>
-            <p>A comfortable and peaceful room designed for a relaxing stay. 
-               It features modern furnishings, a cosy atmosphere, and essential amenities 
-               to ensure a pleasant and stress-free experience</p>
+            <p>A comfortable and peaceful room designed for a relaxing stay.</p>
+
             <div class="room-bottom">
-                <strong>£79 / night</strong>
-                <a href="#" class="secondary-btn">View Details</a>
+                <strong>£99 / night</strong>
+                <button class="view-details-btn">View Details</button>
+            </div>
+
+            <div class="room-details">
+                <p><strong>Room Size:</strong> 28 m²</p>
+                <p><strong>Bed Type:</strong> Queen Bed</p>
+                <p><strong>Facilities:</strong> Free WiFi, TV, Air Conditioning, Private Bathroom</p>
             </div>
         </div>
     </div>
 
+    <!-- Super Room -->
     <div class="room-card">
-        <img src="images/double-room.jpg" alt="Double room">
+        <img src="images/super-room.jpg" alt="Super Room">
         <div class="room-content">
-            <span class="room-tag">2 Guests</span>
             <h3>Super Room</h3>
-            <p>A premium room offering a luxury experience with stylish modern design. 
-               It provides extra space, elegant décor, and upgraded facilities, 
-               making it ideal for guests seeking comfort and sophistication.</p>
+            <p>A premium room offering a luxury experience with stylish modern design.</p>
+
             <div class="room-bottom">
-                <strong>£109 / night</strong>
-                <a href="#" class="secondary-btn">View Details</a>
+                <strong>£139 / night</strong>
+                <button class="view-details-btn">View Details</button>
+            </div>
+
+            <div class="room-details">
+                <p><strong>Room Size:</strong> 35 m²</p>
+                <p><strong>Bed Type:</strong> King Bed</p>
+                <p><strong>Facilities:</strong> Free WiFi, Smart TV, Balcony, Mini Fridge</p>
             </div>
         </div>
     </div>
 
+    <!-- Family Room -->
     <div class="room-card">
-        <img src="images/family-room.jpg" alt="Family room">
+        <img src="images/family-room.jpg" alt="Family Room">
         <div class="room-content">
-            <span class="room-tag">4+ Guests</span>
             <h3>Family Room</h3>
-            <p>Designed for families or groups, this room provides ample space and comfort for multiple guests. 
-               It includes modern facilities and a welcoming atmosphere, ensuring a convenient and enjoyable 
-               stay for everyone.</p>
+            <p>Perfect for family vacations, offering spacious and comfortable accommodation.</p>
+
             <div class="room-bottom">
-                <strong>£189 / night</strong>
-                <a href="#" class="secondary-btn">View Details</a>
+                <strong>£179 / night</strong>
+                <button class="view-details-btn">View Details</button>
+            </div>
+
+            <div class="room-details">
+                <p><strong>Room Size:</strong> 42 m²</p>
+                <p><strong>Bed Type:</strong> Two Double Beds</p>
+                <p><strong>Facilities:</strong> Free WiFi, TV, Family Seating Area, Extra Storage</p>
             </div>
         </div>
     </div>
-</section>
 
-<section class="highlight-banner">
-    <div>
-        <h2>Comfort Meets Luxury</h2>
-        <p>Each room is thoughtfully designed with modern facilities and a calm atmosphere.</p>
-    </div>
-    <a href="index.html#booking" class="primary-btn">Reserve Now</a>
 </section>
 
 <footer class="footer">
     <div class="footer-container">
+
         <div class="footer-col">
             <h3>Hotel Buddha</h3>
             <p>Find peace and luxury in every stay.</p>
@@ -113,9 +127,63 @@
             <p>Email: info@hotelbuddha.com</p>
             <p>Phone: +44 123 456 789</p>
         </div>
+
     </div>
+
     <p class="copyright">© 2026 Hotel Buddha</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".view-details-btn");
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const roomContent = btn.closest(".room-content");
+            const details = roomContent.querySelector(".room-details");
+
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                btn.textContent = "View Details";
+            } else {
+                details.style.display = "block";
+                btn.textContent = "Hide Details";
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".view-details-btn");
+
+    buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const roomContent = btn.closest(".room-content");
+            const details = roomContent.querySelector(".room-details");
+
+            details.classList.toggle("open");
+
+            btn.textContent =
+                details.classList.contains("open")
+                ? "Hide Details"
+                : "View Details";
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".room-card, .section-title")
+        .forEach(el => observer.observe(el));
+
+});
+</script>
 
 </body>
 </html>
