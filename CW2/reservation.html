@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hotel Buddha</title>
+<style>
+:root{--saff:#d97706;--gold:#f59e0b;--deep:#7c4a03;--sand:#f7f3e9}
+body{margin:0;font-family:Poppins,Arial;background:var(--sand);color:var(--deep)}
+header{background:linear-gradient(135deg,var(--saff),var(--gold));padding:10px;display:flex;justify-content:center;align-items:center;gap:8px}
+.logo{width:30px;height:30px;object-fit:contain}
+.brand{color:#fff;font-weight:700;font-size:18px}
+main{max-width:850px;margin:20px auto;padding:0 12px;display:flex;gap:16px;justify-content:center}
+#card{width:360px;background:#fffaf5;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.12);border-top:4px solid var(--saff)}
+label{font-size:12px;font-weight:600;margin-bottom:4px;display:block}
+input,select{width:100%;padding:8px;border-radius:6px;border:1px solid #e6d9c6;background:#fff;margin-bottom:10px;font-size:13px}
+.btn{width:100%;padding:10px;border-radius:8px;border:0;background:var(--saff);color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+.info{width:280px;background:#fff;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);font-size:13px}
+.room{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #eee}
+#success{display:none;max-width:360px;margin:20px auto;padding:20px;border-radius:10px;background:linear-gradient(135deg,var(--saff),var(--gold));color:#fff;text-align:center}
+.footer{text-align:center;margin-top:20px;background:var(--deep);color:#f7e9d0;padding:10px;font-size:12px}
+.small{font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" class="logo" alt="Hotel Buddha logo">
+  <div class="brand">Hotel Buddha</div>
+</header>
+
+<main id="mainView">
+  <section id="card">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+      <img src="logo.png" style="width:26px;height:26px" alt="">
+      <div style="font-size:13px;font-weight:700">Reserve a Room</div>
+    </div>
+
+    <label for="name">Full Name</label><input id="name" type="text" autocomplete="name">
+    <label for="email">Email</label><input id="email" type="email" autocomplete="email">
+    <label for="contact">Contact</label><input id="contact" type="text" autocomplete="tel">
+    <label for="checkin">Check-in</label><input id="checkin" type="date">
+    <label for="checkout">Check-out</label><input id="checkout" type="date">
+    <label for="guests">Guests</label>
+    <select id="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+
+    <label for="room">Room Type</label>
+    <select id="room">
+      <option value="">Select</option>
+      <option>Super Room</option>
+      <option>Deluxe Room</option>
+      <option>Family Room</option>
+    </select>
+
+    <button id="submitBtn" class="btn">Confirm Reservation</button>
+  </section>
+
+  <aside class="info">
+    <h3 style="margin:0 0 6px 0;font-size:14px">Room & Pricing</h3>
+    <div class="room"><span>Super Room</span><span>£95</span></div>
+    <div class="room"><span>Deluxe Room</span><span>£140</span></div>
+    <div class="room"><span>Family Room</span><span>£180</span></div>
+  </aside>
+</main>
+
+<section id="success" aria-live="polite">
+  <img src="logo.png" style="width:40px;height:40px;margin-bottom:10px" alt="">
+  <h2 style="font-size:18px;margin-bottom:6px">Reservation Confirmed</h2>
+  <p class="small" style="margin-bottom:12px">Your booking is confirmed.</p>
+  <div id="summary" style="text-align:left;background:rgba(255,255,255,.15);padding:10px;border-radius:8px;font-size:13px;margin-bottom:14px"></div>
+  <button id="backBtn" class="btn" style="background:#fff;color:var(--saff)">Back</button>
+</section>
+
+<div class="footer">© 2026 Hotel Buddha — Designed by Student Developer</div>
+
+<script>
+(function(){
+  const prices = {"Super Room":95,"Deluxe Room":140,"Family Room":180};
+
+  const els = {
+    mainView: document.getElementById('mainView'),
+    success: document.getElementById('success'),
+    summary: document.getElementById('summary'),
+    submitBtn: document.getElementById('submitBtn'),
+    backBtn: document.getElementById('backBtn'),
+    name: document.getElementById('name'),
+    email: document.getElementById('email'),
+    contact: document.getElementById('contact'),
+    checkin: document.getElementById('checkin'),
+    checkout: document.getElementById('checkout'),
+    guests: document.getElementById('guests'),
+    room: document.getElementById('room')
+  };
+
+  function validate(data){
+    return data.name && data.email && data.contact && data.checkin && data.checkout && data.room;
+  }
+
+  function submitReservation(){
+    const data = {
+      name: els.name.value.trim(),
+      email: els.email.value.trim(),
+      contact: els.contact.value.trim(),
+      checkin: els.checkin.value,
+      checkout: els.checkout.value,
+      guests: els.guests.value,
+      room: els.room.value,
+      price: prices[els.room.value] || 0
+    };
+
+    if(!validate(data)){
+      alert('Please complete all fields.');
+      return;
+    }
+
+    showSuccess(data);
+  }
+
+  function showSuccess(d){
+    els.mainView.style.display = 'none';
+    els.success.style.display = 'block';
+    els.summary.innerHTML =
+      `<div><b>Name:</b> ${escapeHtml(d.name)}</div>
+       <div><b>Room:</b> ${escapeHtml(d.room)}</div>
+       <div><b>Check-in:</b> ${escapeHtml(d.checkin)}</div>
+       <div><b>Check-out:</b> ${escapeHtml(d.checkout)}</div>
+       <div><b>Guests:</b> ${escapeHtml(d.guests)}</div>
+       <div><b>Price:</b> £${d.price}</div>`;
+  }
+
+  function goHome(){
+    els.success.style.display = 'none';
+    els.mainView.style.display = 'flex';
+    window.scrollTo(0,0);
+  }
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+  }
+
+  els.submitBtn.addEventListener('click', submitReservation);
+  els.backBtn.addEventListener('click', goHome);
+
+  // expose for debugging if needed
+  window._hb = { showSuccess, goHome };
+})();
+</script>
+
+</body>
+</html>
