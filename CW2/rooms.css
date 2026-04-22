@@ -784,3 +784,121 @@ img { display: block; width: 100%; }
     .testimonials-grid { grid-template-columns: 1fr; }
 }
 
+.toast-container {
+    position: fixed;
+    top: 88px;
+    right: 20px;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: min(360px, calc(100vw - 32px));
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--ink);
+    border: 1px solid var(--cream-dark);
+    border-left: 4px solid var(--gold);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    padding: 14px 16px;
+    transform: translateY(-10px) scale(0.98);
+    opacity: 0;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    pointer-events: auto;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.toast.hide {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+}
+
+.toast.success {
+    border-left-color: #3c8c63;
+}
+
+.toast.info {
+    border-left-color: var(--gold);
+}
+
+.toast-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: inherit;
+}
+
+.toast.success .toast-icon {
+    color: #3c8c63;
+}
+
+.toast.info .toast-icon {
+    color: var(--gold-dark);
+}
+
+.toast-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.toast-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+}
+
+.toast-message {
+    margin-top: 4px;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.toast-close {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px;
+    margin-left: 4px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.toast-close:hover {
+    color: var(--ink);
+    transform: scale(1.08);
+}
+
+.toast-close:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .toast-container {
+        top: 76px;
+        right: 12px;
+        left: 12px;
+    }
+
+    .toast {
+        width: 100%;
+    }
+}
