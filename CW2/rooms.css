@@ -309,6 +309,7 @@ img { display: block; width: 100%; }
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
+    align-items: start;
 }
 
 .room-card {
@@ -321,6 +322,7 @@ img { display: block; width: 100%; }
     position: relative;
     display: flex;
     flex-direction: column;
+    align-self: start;
 }
 
 .room-card:hover {
@@ -781,3 +783,4 @@ img { display: block; width: 100%; }
     .rooms-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
 }
+
