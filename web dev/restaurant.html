@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Buddha | Restaurant</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="restaurant.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="logo.jpeg" alt="Hotel Buddha Logo" class="logo-img" />
+    <span>Hotel Buddha</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li class="active"><a href="restaurant.html">Restaurant</a></li>
+    <li><a href="services.html">Services</a></li>
+  </ul>
+</nav>
+
+<!-- =========================
+     HERO (LIGHT / PHOTO STYLE)
+========================= -->
+<header class="hero">
+  <div class="hero-content">
+    <p class="tagline">Hotel Dining</p>
+    <h1>
+      Elegant Dining,<br />
+      Thoughtfully Prepared
+    </h1>
+    <p>
+      Enjoy refined flavours and a calm atmosphere at Hotel Buddha Restaurant
+    </p>
+    <a href="#menu" class="hero-btn">Explore Menu</a>
+  </div>
+</header>
+
+<!-- =========================
+     MENU
+========================= -->
+<section id="menu" class="menu-section">
+  <h2>Our Menu <br>Our Signature Dish</h2>
+
+  <div class="menu-grid">
+
+    <div class="menu-card">
+      <img src="images/momo.jpg" alt="Momo" class="menu-img" />
+      <button class="dish-title" data-target="momo">
+        Momo  <span>£8.99</span>
+      </button>
+      <p class="dish-short">Steamed Nepali dumplings</p>
+      <div class="dish-info" id="momo">
+        <p>Handcrafted dumplings served with spicy homemade chutney.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="images/pancakes.webp" alt="Pancakes" class="menu-img" />
+      <button class="dish-title" data-target="pancakes">
+        Pancakes  <span>£7.49</span>
+      </button>
+      <p class="dish-short">Soft & fluffy pancakes</p>
+      <div class="dish-info" id="pancakes">
+        <p>Freshly cooked pancakes with maple syrup and seasonal fruits.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="images/soup.jpg" alt="Soup" class="menu-img" />
+      <button class="dish-title" data-target="soup">
+        Soup  <span>£6.50</span>
+      </button>
+      <p class="dish-short">Warm & comforting</p>
+      <div class="dish-info" id="soup">
+        <p>Daily prepared soup using fresh seasonal vegetables.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="images/salad.jpg" alt="Salad" class="menu-img" />
+      <button class="dish-title" data-target="salad">
+        Salad  <span>£5.99</span>
+      </button>
+      <p class="dish-short">Fresh & light</p>
+      <div class="dish-info" id="salad">
+        <p>Fresh greens with olive oil, herbs, and lemon dressing.</p>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <img src="images/halloumi.jpg" alt="Halloumi & Hummus" class="menu-img" />
+      <button class="dish-title" data-target="halloumi">
+        Halloumi & Hummus <span>£7.99</span>
+      </button>
+      <p class="dish-short">Grilled & creamy</p>
+      <div class="dish-info" id="halloumi">
+        <p>Grilled halloumi served with smooth hummus and warm bread.</p>
+      </div>
+    </div>
+
+    <div class="menu-card featured">
+      <img src="images/thakali.avif" alt="Thakali Set" class="menu-img" />
+      <button class="dish-title" data-target="thakali">
+        Thakali Set <span>£14.99</span>
+      </button>
+      <p class="dish-short">Traditional Nepali meal</p>
+      <div class="dish-info" id="thakali">
+        <p>Rice, lentils, vegetables, pickles, curry, and meat.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     RESERVATION
+========================= -->
+<section class="reservation">
+  <h2>Reserve a Table</h2>
+
+  <form id="reservationForm">
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email Address" required />
+    <input type="number" min="1" placeholder="Number of Guests" required />
+    <button type="submit">Reserve Now</button>
+  </form>
+
+  <p id="reservationMsg"></p>
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  <p>© 2026 Hotel Buddha Restaurant. All rights reserved.</p>
+</footer>
+
+<!-- JS -->
+<script src="restaurant.js"></script>
+
+</body>
+</html>
