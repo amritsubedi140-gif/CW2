@@ -170,7 +170,6 @@ section h2 {
   opacity: 1;
   transform: translateY(0);
 }
-
 /* =========================
    MENU / CARDS
 ========================= */
@@ -180,13 +179,14 @@ section h2 {
   gap: 30px;
 }
 
-.menu-card,
-.feature-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px;
-  text-align: left;
+/* Dish selected on hover (image only) */
+.menu-card .menu-img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.menu-card:hover .menu-img {
+  transform: scale(1.05);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
 }
 
 .menu-img {
@@ -195,6 +195,7 @@ section h2 {
   object-fit: cover;
   margin-bottom: 15px;
 }
+
 
 .dish-title {
   background: none;
