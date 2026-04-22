@@ -5,29 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Buddha</title>
 
-    <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="Home.css">
+    <script src="Home.js"></script>
 </head>
 
 <body>
-
-<!-- 🔹 NAVBAR -->
-<header class="navbar">
-    <div class="logo">Hotel Buddha</div>
+<header>
+        <a href="home.html" class="brand-wrap">
+            <img src="images/logo.jpeg" class="logo" alt="Hotel Buddha logo">
+            <span class="brand-text">Hotel Buddha</span>
+        </a>
     <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="rooms.html">Rooms</a></li>
         <li><a href="restaurant.html">Restaurant</a></li>
         <li><a href="services.html">Services</a></li>
     </ul>
-    <div class="auth">
-        <button class="login">Login</button>
-        <button class="signup">Sign Up</button>
-    </div>
 </header>
 
-<!-- 🔹 HERO SECTION -->
 <section class="hero">
     <div class="hero-overlay">
         <h1>Rooms from Affordable Luxury</h1>
@@ -35,7 +31,6 @@
     </div>
 </section>
 
-<!-- 🔹 BOOKING BAR  -->
 <section class="booking-bar">
     <form id="bookingForm">
 
@@ -69,31 +64,33 @@
             </select>
         </div>
 
-        <button type="submit" class="search-btn">Search</button>
+        <button type="button" class="search-btn" onclick="window.location.href='rooms.html'">
+    Search</button>
+
 
     </form>
 </section>
 
-<!-- 🔹 ROOMS PREVIEW -->
+
 <section class="rooms-preview">
     <h2>Explore Our Rooms</h2>
 
     <div class="room-cards">
 
         <div class="card">
-            <img src="images/room1.jpg" alt="Room">
+            <img src="images/deluxe-room.jpg" alt="Room">
             <h3>Deluxe Room</h3>
             <p>Comfortable and peaceful stay</p>
         </div>
 
         <div class="card">
-            <img src="images/room2.jpg" alt="Room">
+            <img src="images/super-room.jpg" alt="Room">
             <h3>Super Room</h3>
             <p>Luxury experience with modern design</p>
         </div>
 
         <div class="card">
-            <img src="images/room3.jpg" alt="Room">
+            <img src="images/family-room.jpg" alt="Room">
             <h3>Family Room</h3>
             <p>Perfect for family vacations</p>
         </div>
@@ -101,16 +98,17 @@
     </div>
 </section>
 
-<!-- 🔹 RESTAURANT SECTION -->
 <section class="restaurant">
+
     <div class="content">
         <h2>Our Restaurant</h2>
         <p>Enjoy delicious meals with a peaceful ambiance.</p>
-        <a href="restaurant.html" class="btn">Explore Menu</a>
+        <a href="restaurant.html" class="btn">Explore Resturant</a>
     </div>
 </section>
 
-<!-- 🔹 SERVICES -->
+
+
 <section class="services">
     <h2>Our Services</h2>
 
@@ -122,7 +120,6 @@
     </div>
 </section>
 
-<!-- 🔹 FOOTER -->
 <footer>
     <div class="footer-content">
         <div>
